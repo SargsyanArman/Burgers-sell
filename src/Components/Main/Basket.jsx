@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import BasketItems from './BasketItems';
+import ModalWindow from './ModalWindow'
 
-const Basket = ({ handleMouseUp, burgers, setBurgers, isBurger }) => {
+const Basket = ({ handleMouseUp, burgers, setBurgers }) => {
   const [basketHeight, setBasketHeight] = useState(109);
   const [basketCount, setBasketCount] = useState(0);
   const [total, setTotal] = useState(0)
@@ -51,13 +52,8 @@ const Basket = ({ handleMouseUp, burgers, setBurgers, isBurger }) => {
         <span className='text-2xl font-semibold'>Корзина</span>
         <span className='text-xs pt-1 w-10 h-6 text-center bg-[#F2F2F3] rounded-[6px]'>{basketCount}</span>
       </div>
-      <BasketItems increment={increment} decrement={decrement} handleChange={handleChange} burgers={burgers} isBurger={isBurger} total={total} />
-      {isBurger && <button
-        className='mt-2 py-[11px] mx-[15px] text-white bg-[#F86310] rounded-[12px] cursor-pointer hover:bg-[#FFAB08] focus:bg-[#F86310]'
-        onMouseUp={handleMouseUp}
-      >
-        Добавить
-      </button>}
+      <BasketItems increment={increment} decrement={decrement} handleChange={handleChange} burgers={burgers} total={total} />
+      {burgers.length !== 0 && <ModalWindow handleMouseUp={handleMouseUp} />}
     </div>
   );
 };

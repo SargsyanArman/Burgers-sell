@@ -4,7 +4,6 @@ import Burgers from './Burgers';
 
 const Main = () => {
   const [burgers, setBurgers] = useState([]);
-  const [isBurger, setIsBurger] = useState(false);
 
   const handleMouseUp = (event) => {
     event.currentTarget.blur();
@@ -12,7 +11,7 @@ const Main = () => {
 
   const handleClone = (burger) => {
     const existingBurgerIndex = burgers.findIndex(item => item.id === burger.id);
-  
+
     if (existingBurgerIndex !== -1) {
       const updateBurgers = burgers.map((item) => {
         if (item.id === burger.id && item.quantity < 10) {
@@ -24,14 +23,13 @@ const Main = () => {
     } else {
       const newElement = { ...burger };
       setBurgers([...burgers, newElement]);
-      setIsBurger(true);
     }
   };
-  
+
 
   return (
     <main className='flex mx-[75px]'>
-      <Basket burgers={burgers} setBurgers={setBurgers} isBurger={isBurger} handleMouseUp={handleMouseUp} />
+      <Basket burgers={burgers} setBurgers={setBurgers} handleMouseUp={handleMouseUp} />
       <Burgers add={handleClone} handleMouseUp={handleMouseUp} />
     </main>
   );

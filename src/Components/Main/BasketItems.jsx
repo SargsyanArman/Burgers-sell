@@ -1,9 +1,9 @@
 import React from 'react';
 
-const BasketItems = ({ increment, decrement, handleChange, burgers, isBurger, total }) => {
+const BasketItems = ({ increment, decrement, handleChange, burgers, total }) => {
   return (
     <div className='mx-4'>
-      {isBurger ? (
+      {burgers.length !== 0 ? (
         <ul>
           {burgers.map((burgerItem) => (
             <li key={burgerItem.id}>
