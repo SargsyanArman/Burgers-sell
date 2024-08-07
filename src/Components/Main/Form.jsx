@@ -2,7 +2,7 @@ import { Box, FormControl, FormControlLabel, Radio, RadioGroup, TextField, Typog
 import { MuiTelInput } from 'mui-tel-input';
 import React, { useState, Fragment } from 'react';
 
-const Form = () => {
+const Form = ({ handleMouseUp }) => {
     const [countryNumber, setCountryNumber] = useState('AM');
     const [makeOrder, setMakeOrder] = useState(false);
     const [orderType, setOrderType] = useState('selfcall');
@@ -79,6 +79,14 @@ const Form = () => {
                                 size="small"
                             />
                         </Box>
+
+                        <input
+                            type='submit'
+                            className='mt-2 py-[11px] px-[100px] text-white bg-[#F86310] rounded-[12px] cursor-pointer hover:bg-[#FFAB08] focus:bg-[#F86310]'
+                            onMouseUp={handleMouseUp}
+                            value='Добавить'
+                        />
+
                     </Fragment>
                 )}
             </RadioGroup>

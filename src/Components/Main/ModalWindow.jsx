@@ -31,7 +31,7 @@ const styleFirstHalf = {
 const styleSecondHalf = {
     display: 'flex',
     flexDirection: 'column',
-    padding: '52px 30px 0px 30px',
+    padding: '35px 30px 0px 30px',
     width: '50%',
 };
 
@@ -76,7 +76,7 @@ const ModalWindow = ({ handleMouseUp }) => {
                         >
                             <CloseIcon />
                         </IconButton>
-                        <Form />
+                        <Form handleMouseUp={handleMouseUp} />
                     </Box>
                 </Box>
             </ModalMui>

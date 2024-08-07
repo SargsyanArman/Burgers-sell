@@ -12,11 +12,12 @@ import pizza from '../../../images/navimg/pizza.png';
 import bok from '../../../images/navimg/bok.png';
 import desert from '../../../images/navimg/desert.png';
 import sous from '../../../images/navimg/sous.png';
+import { Outlet } from 'react-router-dom';
 
 const Header = () => {
-  
+
   const navMenuList = [
-    { name: 'Бургери', img: burger, id: 1},
+    { name: 'Бургери', img: burger, id: 1 },
     { name: 'Закуски', img: onion, id: 2 },
     { name: 'Хот-Доги', img: hotDog, id: 3 },
     { name: 'Комбо', img: combo, id: 4 },
@@ -32,6 +33,8 @@ const Header = () => {
       <HeaderIntroduce headerBurger={headerBurger} youMealLogo={youMealLogo} />
       <Navigation allMenu={navMenuList} />
     </div>
+
+
   );
 }
 

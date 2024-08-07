@@ -1,18 +1,19 @@
-import Header from "./Components/Header/Header";
-import Main from "./Components/Main/Main";
-import Footer from "./Components/Footer/Footer";
+import React from 'react';
+import { createBrowserRouter } from 'react-router-dom';
+import Root from './Rooters/Root';
+import Main from './Components/Main/Main';
 
-function App() {
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Root />,
+    children: [
+      {
+        path: ':menu',
+        element: <Main />,
+      },
+    ],
+  },
+]);
 
-    return (
-     <div className="bg-[#F9F9F9] h-full"> 
-      <Header />
-      <Main />
-      <Footer />
-     </div>
-    );
-  }
-
-export default App;
-
-
+export default router;

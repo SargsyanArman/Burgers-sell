@@ -4,7 +4,7 @@ const BurgerItem = ({ burgersData, handleMouseUp, add }) => {
   return (
     <div className='mt-10'>
       <ul className='flex flex-wrap justify-around gap-8'>
-        {burgersData.map((burger,idx) => (
+        {burgersData.map((burger, idx) => (
           <li key={burger.id}>
             <div className='flex flex-col h-[441px] w-[300px] rounded-[18px] p-3 bg-white'>
               <img src={burger.image} alt={burger.burgerName} />
